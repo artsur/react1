@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import Post from './Post';
 
 const Posts = ({syncPosts}) => {
-    const postsList = syncPosts.map(el=>(<Post key={el.id} post={el}/>));
+    const postsList = syncPosts.map(el=>(<Post key={el.id} post={el} type={'sync_post'}/>));
     const postsBlock = postsList.length ? postsList : (
         <p className={'text-danger'}>No posts</p>
     )

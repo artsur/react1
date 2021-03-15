@@ -1,6 +1,6 @@
 import React from 'react';
-import {togglePostForm} from '../redux/actions';
 import {useDispatch, useSelector} from 'react-redux';
+import {togglePostForm} from '../redux/actions';
 
 const ShowPostFormButton = () => {
     const dispatch = useDispatch();

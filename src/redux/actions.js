@@ -1,4 +1,4 @@
-import {CREATE_POST, FETCH_POSTS, HIDE_LOADER, SHOW_LOADER, SHOW_POST_FORM, HIDE_POST_FORM} from './types';
+import {CREATE_POST, FETCH_POSTS, HIDE_LOADER, SHOW_LOADER, SHOW_POST_FORM, HIDE_POST_FORM, DELETE_POST} from './types';
 
 export function createPost(post) {
     return {
@@ -21,6 +21,17 @@ export function fetchPosts() {
             dispatch(hideLoader());
         },300)
 
+    }
+}
+
+export function deletePost(post_type,post_id) {
+    //console.log(post_type,post_id);
+    return {
+        type: DELETE_POST,
+        payload:{
+            type: post_type,
+            id: post_id
+        }
     }
 }
 

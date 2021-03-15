@@ -9,7 +9,7 @@ const FetchedPosts = () => {
     const posts = useSelector(state => state.posts.fetchedPosts );
     const loading = useSelector( state => state.app.loading);
 
-    const postsList = posts.map(el=>(<Post key={el.id} post={el}/>));
+    const postsList = posts.map(el=>(<Post key={el.id} post={el} type={'async_post'}/>));
 
     const spinners = [1,2,3].map((el,index) =>{
         return <div key={'spinner_'+index} className={'spinner-grow spinner-grow-sm text-primary mx-3'}/>
