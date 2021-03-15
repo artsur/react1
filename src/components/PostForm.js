@@ -10,7 +10,6 @@ class PostForm extends Component {
             body:''
         }
     }
-
     changeInputHandler = event => {
         event.persist();
         this.setState(prev => ({...prev}, {
@@ -38,8 +37,7 @@ class PostForm extends Component {
         })
     };
 
-
-    render() {
+    form = () => {
         return (
             <form className='card shadow' onSubmit={this.submitHandler}>
                 <div className='card-header'>
@@ -75,10 +73,20 @@ class PostForm extends Component {
             </form>
         );
     }
+
+    render() {
+        return this.props.show ? this.form() : (<div className={'d-none'}> </div>)
+    }
 }
 
 const mapDispatchToProps = {
     createPost
 }
 
-export default connect(null,mapDispatchToProps)(PostForm);
+const mapStateToProps = state => {
+    return {
+        show: state.app.show
+    };
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(PostForm);

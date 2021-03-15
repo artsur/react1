@@ -2,3 +2,5 @@ export const CREATE_POST = 'POST/CREATE_POST';
 export const FETCH_POSTS = 'POST/FETCH_POSTS';
 export const SHOW_LOADER = 'APP/SHOW_LOADER';
 export const HIDE_LOADER = 'APP/HIDE_LOADER';
+export const SHOW_POST_FORM = 'APP/SHOW_POST_FORM';
+export const HIDE_POST_FORM = 'APP/HIDE_POST_FORM';

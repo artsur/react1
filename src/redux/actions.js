@@ -1,4 +1,4 @@
-import {CREATE_POST, FETCH_POSTS, HIDE_LOADER, SHOW_LOADER} from './types';
+import {CREATE_POST, FETCH_POSTS, HIDE_LOADER, SHOW_LOADER, SHOW_POST_FORM, HIDE_POST_FORM} from './types';
 
 export function createPost(post) {
     return {
@@ -33,5 +33,18 @@ export function showLoader() {
 export function hideLoader() {
     return {
         type: HIDE_LOADER
+    }
+}
+
+export function togglePostForm(nowStatus) {
+    if(nowStatus){
+        return {
+            type: HIDE_POST_FORM,
+            payload: false
+        }
+    }
+    return {
+        type: SHOW_POST_FORM,
+        payload: true
     }
 }

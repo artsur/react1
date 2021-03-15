@@ -4,18 +4,20 @@ import Post from './Post';
 import {fetchPosts} from '../redux/actions';
 
 
-const FetchedPosts = ()=> {
+const FetchedPosts = () => {
     const dispatch = useDispatch();
     const posts = useSelector(state => state.posts.fetchedPosts );
     const loading = useSelector( state => state.app.loading);
 
     const postsList = posts.map(el=>(<Post key={el.id} post={el}/>));
 
+    const spinners = [1,2,3].map((el,index) =>{
+        return <div key={'spinner_'+index} className={'spinner-grow spinner-grow-sm text-primary mx-3'}/>
+    });
+
     const loadingIcon = (
         <div className='text-center py-3'>
-            <div className={'spinner-grow spinner-grow-sm text-primary mx-3'}/>
-            <div className={'spinner-grow spinner-grow-sm text-primary mx-3'}/>
-            <div className={'spinner-grow spinner-grow-sm text-primary mx-3'}/>
+            {spinners}
         </div>
     )
 
