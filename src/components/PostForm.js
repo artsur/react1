@@ -12,6 +12,7 @@ class PostForm extends Component {
     }
     changeInputHandler = event => {
         event.persist();
+        // eslint-disable-next-line
         this.setState(prev => ({...prev}, {
             [event.target.name] : event.target.value
         }));
