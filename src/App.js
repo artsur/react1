@@ -1,12 +1,18 @@
+import RoundButton from './components/RoundButton';
 import PostForm from './components/PostForm';
 import Posts from './components/Posts';
 import FetchedPosts from './components/FetchedPosts';
 import ShowPostFormButton from './components/ShowPostFormButton';
 
 function App() {
+    let customElementRegistry = window.customElements;
+    if(customElementRegistry.get("round-button") === undefined){
+        customElementRegistry.define("round-button", RoundButton);
+    }
+
     return (
         <div className='container py-3'>
-            <h1>React app</h1>
+            <h1>React app <round-button class='ml-3' value='#'/></h1>
             <div className='my-4'>
                 <ShowPostFormButton/>
                 <PostForm/>
