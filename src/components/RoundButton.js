@@ -3,7 +3,7 @@ class RoundButton extends HTMLElement {
         super();
         // элемент создан
         const value = this.value;
-        const shadowRoot = this.attachShadow({mode: 'closed'});
+        const shadowRoot = this.attachShadow({mode: 'open'});
     }
 
     connectedCallback() {
