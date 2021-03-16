@@ -4,26 +4,6 @@ class RoundButton extends HTMLElement {
         // элемент создан
         const value = this.value;
         const shadowRoot = this.attachShadow({mode: 'closed'});
-        /*const elementContainer = document.createElement('div');
-        elementContainer.classList.add('round-button');
-
-        elementContainer.innerHTML = `
-            <style>
-                div.round-button{
-                    display: inline-block;
-                    background: #ddd;
-                    border-radius:50%;
-                    border: 1px solid #ccc;
-                    cursor:pointer;
-                }
-                div.round-button:hover{
-                    background: #ccc;
-                    border: 1px solid #bbb;
-                }            
-            </style>
-            <div class="round-button-value">${value}</div>
-        `;
-        shadowRoot.appendChild(elementContainer);*/
     }
 
     connectedCallback() {
